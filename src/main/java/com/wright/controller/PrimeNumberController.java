@@ -14,8 +14,11 @@ public class PrimeNumberController {
 
     /**
      * @should call calculator service with initial value passed in
+     * @should call calculator service with initial value and algorithm passed in
      * @should return json when accept json mediatype header is specified
      * @should return XML when accept XML mediatype header is specified
+     * @should return bad request if non-integer initial value passed in
+     * @should return bad request if non-numberical initial value passed in
      */
     @RequestMapping(value = "/primes/{initial}", method = RequestMethod.GET)
     public ResponseEntity<Response> calculatePrimes(@PathVariable(value = "initial") Integer initial,

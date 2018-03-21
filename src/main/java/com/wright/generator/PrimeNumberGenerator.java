@@ -1,9 +1,9 @@
 package com.wright.generator;
 
-import java.util.Set;
+import java.util.SortedSet;
 
 public interface PrimeNumberGenerator {
 
-    Set<Integer> calculatePrimesBetween(Integer lowerBoundary, Integer upperBoundary);
+    SortedSet<Integer> calculatePrimesBetween(Integer lowerBoundary, Integer upperBoundary);
 
 }

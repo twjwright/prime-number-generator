@@ -5,7 +5,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import lombok.Value;
 
-import java.util.List;
+import java.util.SortedSet;
 
 @Value
 public class Response {
@@ -14,5 +14,5 @@ public class Response {
     @JsonProperty(value="Primes")
     @JacksonXmlElementWrapper(localName = "Primes")
     @JacksonXmlProperty(localName = "Prime")
-    List<Integer> primes;
+    SortedSet<Integer> primes;
 }

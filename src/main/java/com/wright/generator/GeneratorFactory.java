@@ -8,18 +8,23 @@ import org.springframework.stereotype.Component;
 public class GeneratorFactory {
 
     @Autowired
-    private SievePrimeNumberGenerator sievePrimeNumberGenerator;
+    private SieveGenerator sieveGenerator;
     @Autowired
-    private TrialDivisionPrimeNumberGenerator trialDivisionPrimeNumberGenerator;
+    private TrialDivisionGenerator trialDivisionGenerator;
 
+    /**
+     * @should return sieve generator if sieve algorithm passed in
+     * @should return trial division generator if trial division algorithm passed in
+     * @should default to sieve generator
+     */
     public PrimeNumberGenerator generatorFor(Algorithm algorithm) {
         switch (algorithm) {
             case SIEVE:
-                return sievePrimeNumberGenerator;
+                return sieveGenerator;
             case TRIAL_DIVISION:
-                return trialDivisionPrimeNumberGenerator;
+                return trialDivisionGenerator;
             default:
-                return sievePrimeNumberGenerator;
+                return sieveGenerator;
         }
     }
 }
